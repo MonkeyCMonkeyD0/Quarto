@@ -5,25 +5,24 @@ import com.quarto.ai.tree.Noeud;
 
 public class AlphaBeta_Minmax {
 
-	/* fonction alphabeta(nœud, α, β)  α est toujours inférieur à β 
-		si nœud est une feuille alors
-			retourner la valeur de nœud
-		sinon si nœud est de type Max alors
-			v = -∞
-			pour tout fils de nœud faire
-				v = max(v, alphabeta(fils, α, β)) check
-				si v ≥ β alors  coupure beta 
-					retourner v
-				α = Max(α, v)
-		sinon
-			v = +∞
-			pour tout fils de nœud faire
-				v = min(v, alphabeta(fils, α, β))
-				si α ≥ v alors   coupure alpha 
-					retourner v
-				β = Min(β, v)
-		retourner v
-	*/
+	/* fonction alphabeta(nœud, α, β) α est toujours inférieur à β
+	si nœud est une feuille alors
+		retourner la valeur de nœud
+	sinon si nœud est de type Min alors
+		v = +∞
+		pour tout fils de nœud faire
+			v = min(v, alphabeta(fils, α, β))
+			si α ≥ v alors		coupure alpha
+				retourner v
+			β = Min(β, v)
+	sinon
+		v = -∞
+		pour tout fils de nœud faire
+			v = max(v, alphabeta(fils, α, β))
+			si v ≥ β alors		coupure beta
+				retourner v
+			α = Max(α, v)
+	retourner v */
 	
 	public static Noeud minMaxAB(Noeud noeud, int alpha, int beta) {
 		if (noeud.isFeuille())
